@@ -27,6 +27,9 @@ public:
         /*
          * TODO: homework
          */
+        if(get_inventory_id() == other_media.get_inventory_id()){
+            return true;
+        }
         return false;
     };
 

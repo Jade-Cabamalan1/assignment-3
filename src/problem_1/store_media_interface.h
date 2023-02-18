@@ -11,9 +11,11 @@ public:
     }
 
     virtual int calculate_late_fees(int num_of_days_past_due) {
+        //if mercy rules apply, fee is zero
         if (num_of_days_past_due <= 0 || mercy_rule_apply()) {
             return 0;
         }
+        //default fee
         return late_fee_per_day_in_dollar * num_of_days_past_due;
     }
 
@@ -22,14 +24,8 @@ public:
     }
 
     bool operator==(const StoreMediaInterface &other_media) const {
-        /*
-         * TODO: homework
-         */
-        if(get_inventory_id() == other_media.get_inventory_id()){
-            return true;
-        }
-
-        return false;
+        //looking through the tests, it seems that the same media type have the same inventory id
+        return(get_inventory_id() == other_media.get_inventory_id());
     };
 
     bool operator!=(const StoreMediaInterface &other_media) const {

@@ -1,7 +1,7 @@
 #include "movie_action.h"
 
 int MovieAction::calculate_late_fees(int num_of_days_past_due) {
-
+    //code taken and adapted from the tests
     if (num_of_days_past_due <= 0 || mercy_rule_apply()) {
         return 0;
     }

@@ -4,7 +4,7 @@ template<class T>
 void LinkedList<T>::push_front(const T &value) {
     ListNode<T> *curr = head;
     ListNode<T> *temp = curr->next;
-    curr-> next = new ListNode(value);
+    curr-> next = new ListNode<T>(value);
     curr = curr-> next;
     curr-> next = temp;
     num_of_element++;
@@ -16,7 +16,7 @@ void LinkedList<T>::push_back(const T &value) {
     for (int i = 0; i < num_of_element; ++i) {
         curr = curr->next;
     }
-    curr->next = new ListNode(value);
+    curr->next = new ListNode<T>(value);
     num_of_element++;
 }
 

@@ -18,9 +18,7 @@ public:
     }
 
     virtual bool mercy_rule_apply() {
-        /*
-         * TODO: homework
-         */
+        return (get_inventory_id() % 13 == 0);
     }
 
     bool operator==(const StoreMediaInterface &other_media) const {
@@ -30,6 +28,7 @@ public:
         if(get_inventory_id() == other_media.get_inventory_id()){
             return true;
         }
+
         return false;
     };
 

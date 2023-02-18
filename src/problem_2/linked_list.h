@@ -34,9 +34,14 @@ public:
 
     // copy constructor
     LinkedList(const LinkedList<T> &other_list) : LinkedList() {
-        /*
-         * TODO: homework
-         */
+        ListNode<T> *otherCurr = other_list.head;
+        ListNode<T> *curr = head;
+        num_of_element = other_list.num_of_element;
+        while(otherCurr->next != nullptr){
+            otherCurr = otherCurr->next;
+            curr->next = new ListNode(otherCurr->val);
+            curr = curr->next;
+        }
     }
 
     // destructor
